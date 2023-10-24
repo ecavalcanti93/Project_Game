@@ -1,0 +1,14 @@
+body {
+    background: url('../images/card-board2.jpg') no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.button-jugar {
+    background-color: #FFA500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
