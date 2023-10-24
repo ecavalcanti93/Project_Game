@@ -1,0 +1,7 @@
+body {
+   /* margin: 0;*/
+    background: url('../images/background.webp') no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
