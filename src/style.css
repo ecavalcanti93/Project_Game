@@ -1,9 +1,20 @@
-#home {
-    width: 100vw;
-    height: auto;
-    
+body {
+    margin: 0;
+    height: 100%;
 }
- 
+.containner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    justify-content: center;
+    background-image: url(images/background_home.jpg);
+}
+
   h1 {
     color: #bcec11;
     font-weight: bolder;
@@ -51,7 +62,4 @@
         100% {
             background-position: 0 0;
         }
-    }
-    #logo {
-        display:flex;
     }
