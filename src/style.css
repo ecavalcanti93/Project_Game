@@ -1,6 +1,8 @@
 body {
     margin: 0;
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 .containner {
     display: flex;
@@ -16,7 +18,7 @@ body {
     background-image: url(images/background_home.jpg);
 }
 
-  .button-play {
+  #button-play {
     width: 200px; 
     height: 60px; 
     background-color: gold;
@@ -27,21 +29,11 @@ body {
     border: none; 
     border-radius: 5px; 
     cursor: pointer; 
-    color: white; 
+    color: black; 
     font-size: 18px; 
     text-align: right;
     }
-    .button-play button {
-        width: 100%; 
-        border: none; 
-        background-color: transparent; 
-        cursor: pointer; 
-        color: black; 
-        font-size: 24px; 
-    }
-    .button-play:hover {
-        background-color: darkgoldenrod;
-    }
+
     
   #game-screen {
     display: none;

@@ -7,23 +7,25 @@
     <link rel="stylesheet" type="text/css" href="src/blackjack.css">
 </head>
 <body>
-    <main id="container">
+    <div id="container">
         <img src="images/background_game.jpg" alt="background_home" id="home">
         <img src="images/table.png" alt="" id="table">
-    </main>
-    <div id="game">
-    <h2>Dealer: <span id="dealer-sum"></span></h2>
-    <div id="dealer-cards">
-        <img src="./images/Back_Card.png" alt="" id="hidden">
+        <div id="game">
+        <h2>Dealer: <span id="dealer-sum"></span></h2>
+        <div id="dealer-cards">
+            <img src="./images/Back_Card.png" alt="" id="hidden">
+        </div>
+        <div>
+        <h2>You: <span id="your-sum"></span></h2>
+        <div id="your-cards"></div>
+        <button id="hit">Hit</button>
+        <button id="pass">Pass</button>
+        <p id="results"></p>
     </div>
-    <h2>You: <span id="your-sum"></span></h2>
-    <div id="your-cards"></div>
-
+    </div>
+    
     <br>
 
-    <button id="hit">Hit</button>
-    <button id="pass">Pass</button>
-    <p id="results"></p>
 </body>
 <script src="script/javascript.js"></script>
 </html>
