@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+ 
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#table {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    background-image: url(images/background_game.jpg);
+}
+
+h2{
+    color: yellow;
+}
+p{
+    color: yellow;
+}
+
+#game {   
+    position:absolute;
+    justify-content: center;
+    background-image: url(images/table.png);
+}
+
+#dealer-cards img{
+    height: 175px;
+    width: 125px;
+    margin: 3px;
+}
+
+#your-cards img{
+    height: 175px;
+    width: 125px;
+    margin: 3px;
+}
+
+#hit{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#pass{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+}

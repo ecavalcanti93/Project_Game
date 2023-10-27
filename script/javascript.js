@@ -39,11 +39,69 @@ function shuffleCards() {
 function startGame() {
     hidden = deck.pop();
     dealerSum += theValue(hidden);
-    dealerAceCount += checkAce(hidden)
-    
+    dealerAceCount += checkAce(hidden);
+    while (dealerSum < 17) {
+        let cardImg = document.createElement('img');
+        let card = deck.pop();
+        cardImg.src = './images/' + card + '.png';
+        dealerSum += theValue(card);
+        dealerAceCount += checkAce(card);
+        document.getElementById("dealer-cards").append(cardImg);
+    }
     //console.log(hidden);
     //console.log(dealerSum)
+    for(let i = 0; i < 2; i++){
+        let cardImg = document.createElement('img');
+        let card = deck.pop();
+        cardImg.src = './images/' + card + '.png';
+        yourSum += theValue(card);
+        yourAceCount += checkAce(card);
+        document.getElementById("your-cards").append(cardImg);
+    }
+    document.getElementById('hit').addEventListener("click", hit);
+    document.getElementById('pass').addEventListener("click", pass);
 }
+
+function hit(){
+    if(!canHit) {
+        return;
+    }
+    let cardImg = document.createElement('img');
+    let card = deck.pop();
+    cardImg.src = './images/' + card + '.png';
+    yourSum += theValue(card);
+    yourAceCount += checkAce(card);
+    document.getElementById("your-cards").append(cardImg);
+    
+    if (reduceAce(yourSum, yourAceCount) > 21) {
+        canHit = false;
+    }
+}
+
+function pass() {
+    dealerSum = reduceAce(dealerSum, dealerAceCount);
+    yourSum = reduceAce(yourSum, yourAceCount);
+    
+    canHit = false;
+    document.getElementById('hidden').src = "./images/" + hidden + '.png';
+    
+    let message = "";
+    if (yourSum > 21) {
+        message = "You Lose!";
+    } else if (dealerSum > 21) {
+        message = "You Win!";
+    } else if (yourSum == dealerSum) {
+        message = "Tie!";
+    } else if (yourSum > dealerSum) {
+        message = "You Win!";
+    } else if (yourSum < dealerSum) {
+        message = "You Lose!";
+    }
+    document.getElementById("dealer-sum").innerText = dealerSum;
+    document.getElementById("your-sum").innerText = yourSum;
+    document.getElementById("results").innerText = message;
+}
+
 function theValue(card) {
     let data = card.split('_');
     let value = data[0];
@@ -64,6 +122,14 @@ function checkAce(card) {
     } else {
         return 0;
     }
+}
+
+function reduceAce(playerSum, playerAceCount) {
+    while(playerSum > 21 && playerAceCount > 0) {
+        playerSum -= 10;
+        playerAceCount -= 1;
+    }
+    return playerSum;
 }
 
 
