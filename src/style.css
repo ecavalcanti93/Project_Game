@@ -12,54 +12,46 @@ body {
 .logo {
     position: absolute;
     justify-content: center;
+    padding-left: 800px;
     background-image: url(images/background_home.jpg);
 }
 
-  h1 {
-    color: #bcec11;
-    font-weight: bolder;
-    font-size: 90px;
-    text-align: center;
-    text-shadow: 1px 0px 20px #141318;
+  .button-play {
+    width: 200px; 
+    height: 60px; 
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    color: white; 
+    font-size: 18px; 
+    text-align: right;
+    }
+    .button-play button {
+        width: 100%; 
+        border: none; 
+        background-color: transparent; 
+        cursor: pointer; 
+        color: black; 
+        font-size: 24px; 
+    }
+    .button-play:hover {
+        background-color: darkgoldenrod;
+    }
+    
+  #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../images/background_game.jpg);
+    background-size: cover;
   }
-    .button-play {
-        background: black;
-        cursor: pointer;
-        border: none;
-        padding: 16px 32px;
-        color: #fff;
-        font-size: 24px;
-        font-weight: bold;
-        position: relative;
-        border-radius: 12px;
-    }
     
-    .boton-play::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            45deg,
-            red, blue, deeppink, blue, red, blue, deeppink, blue
-        );
-        background-size: 800%;
-        border-radius: 10px;
-        filter: blur(8px);
-        animation: glowing 20s linear infinite;
-    }
     
-    @keyframes glowing {
-        0% {
-            background-position: 0 0;
-        }
-        50% {
-            background-position: 400% 0;
-        }
-        100% {
-            background-position: 0 0;
-        }
-    }
+   
