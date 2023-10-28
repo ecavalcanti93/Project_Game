@@ -19,7 +19,7 @@ body {
 }
 
   #button-play {
-    width: 200px; 
+    width: 260px; 
     height: 60px; 
     background-color: gold;
     display: flex;
@@ -27,11 +27,28 @@ body {
     align-items: center;
     margin: 0;
     border: none; 
-    border-radius: 5px; 
+    border-radius: 50px; 
     cursor: pointer; 
     color: black; 
-    font-size: 18px; 
+    font-size: 26px; 
     text-align: right;
+    text-decoration: none;
+    }
+    #button-rules {
+      width: 260px; 
+      height: 60px; 
+      background-color: gold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      border: none; 
+      border-radius: 50px; 
+      cursor: pointer; 
+      color: black; 
+      font-size: 26px; 
+      text-align: right;
+      text-decoration: none;
     }
 
     
@@ -44,6 +61,9 @@ body {
     background-image: url(../images/background_game.jpg);
     background-size: cover;
   }
-    
+    #test {
+      display: flex;
+      gap: 1rem;
+    }
     
    

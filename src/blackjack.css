@@ -79,3 +79,25 @@ button {
     color: white;
     border-radius: 50px;
 }
+#button-back {
+    display: flex;
+   align-items: center;
+    position: absolute;
+   /* justify-content: center;*/
+    /*background-image: url(images/table.png);*/
+    color: antiquewhite;
+   /* margin-left: 1200px;*/
+    top: 70px;
+    right: 70px;
+    width: 100px; 
+    height: 40px; 
+    background-color: gold;
+    justify-content: center;
+    
+    border-radius: 50px; 
+    cursor: pointer; 
+    color: black; 
+    font-size: 18px; 
+    text-decoration: none;
+   
+}
