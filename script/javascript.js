@@ -7,20 +7,21 @@ class CardGame {
         this.hidden = null;
         this.deck = [];
         this.canHit = true;
+        
     }
-
+    
     buildDeck() {
         const values = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
         const types = ['Spades', 'Hearts', 'Clubs', 'Diamonds'];
         this.deck = [];
-
+        
         for (let i = 0; i < types.length; i++) {
             for (let j = 0; j < values.length; j++) {
                 this.deck.push(values[j] + "_" + types[i]);
             }
         }
     }
-
+    
     shuffleCards() {
         for (let i = 0; i < this.deck.length; i++) {
             let j = Math.floor(Math.random() * this.deck.length);
@@ -29,15 +30,15 @@ class CardGame {
             this.deck[j] = temp;
         }
     }
-
+    
     startGame() {
         this.buildDeck();
         this.shuffleCards();
-
+        
         this.hidden = this.deck.pop();
         this.dealerSum += this.theValue(this.hidden);
         this.dealerAceCount += this.checkAce(this.hidden);
-
+        
         while (this.dealerSum < 17) {
             let cardImg = document.createElement('img');
             let card = this.deck.pop();
@@ -46,7 +47,7 @@ class CardGame {
             this.dealerAceCount += this.checkAce(card);
             document.getElementById("dealer-cards").append(cardImg);
         }
-
+        
         for (let i = 0; i < 2; i++) {
             let cardImg = document.createElement('img');
             let card = this.deck.pop();
@@ -55,11 +56,15 @@ class CardGame {
             this.yourAceCount += this.checkAce(card);
             document.getElementById("your-cards").append(cardImg);
         }
-
+        
         document.getElementById('hit').addEventListener("click", this.hit.bind(this));
         document.getElementById('pass').addEventListener("click", this.pass.bind(this));
+        document.getElementById('next-round').addEventListener('click', () => {
+            this.startNext();
+        });
+    
     }
-
+    
     hit() {
         if (!this.canHit) {
             return;
@@ -86,20 +91,37 @@ class CardGame {
         let message = "";
         if (this.yourSum > 21) {
             message = "You Lose!";
-        } else if (this.dealerSum > 21) {
+            this.lives -= 1;
+        } else if (this.dealerSum > 21 || this.lives < 5) {
             message = "You Win!";
+            this.lives += 1;
         } else if (this.yourSum === this.dealerSum) {
             message = "Tie!";
-        } else if (this.yourSum > this.dealerSum) {
+        } else if (this.yourSum > this.dealerSum || this.lives < 5) {
             message = "You Win!";
+            this.lives += 1;
         } else if (this.yourSum < this.dealerSum) {
             message = "You Lose!";
+            this.lives -= 1;
         }
+        
         document.getElementById("dealer-sum").innerText = this.dealerSum;
         document.getElementById("your-sum").innerText = this.yourSum;
         document.getElementById("results").innerText = message;
+        document.getElementById("score-button").innerText = this.lives;
+
+        const nextRound = document.getElementById('next-round');
+        nextRound.style.display = 'block';
     }
 
+    startNext() {
+        this.resetGame();
+        this.buildDeck();
+        this.shuffleCards();
+
+        const nextRound = document.getElementById('next-round');
+        nextRound.style.display = 'none';
+    }
     theValue(card) {
         let data = card.split('_');
         let value = data[0];
@@ -130,6 +152,7 @@ class CardGame {
         return playerSum;
     }
 }
+
 
 const game = new CardGame();
 window.onload = function () {

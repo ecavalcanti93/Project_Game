@@ -70,6 +70,20 @@ p{
     font-size: 18px;
 }
 
+#next-round{
+    display: none;
+    width: 120px;
+    height: 35px;
+    font-size: 18px;
+}
+
+#button-red{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 #results {
     padding-top: 10px;
 }
