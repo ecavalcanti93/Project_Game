@@ -103,7 +103,7 @@ p{
 }
 
 #next-round{
-  
+    display: none;
     width: 120px;
     height: 35px;
     font-size: 18px;
