@@ -66,6 +66,7 @@ class CardGame {
     }
     
     hit() {
+ 
         if (!this.canHit) {
             return;
         }
@@ -115,13 +116,33 @@ class CardGame {
     }
 
     startNext() {
-        this.resetGame();
-        this.buildDeck();
+        //this.resetGame();
+        //this.buildDeck();
         this.shuffleCards();
 
-        const nextRound = document.getElementById('next-round');
-        nextRound.style.display = 'none';
-    }
+        while (this.dealerSum < 17) {
+            let cardImg = document.createElement('img');
+            let card = this.deck.pop();
+            cardImg.src = './images/' + card + '.png';
+            this.dealerSum += this.theValue(card);
+            this.dealerAceCount += this.checkAce(card);
+            document.getElementById("dealer-cards").append(cardImg);
+        }
+        
+        for (let i = 0; i < 2; i++) {
+            let cardImg = document.createElement('img');
+            let card = this.deck.pop();
+            cardImg.src = './images/' + card + '.png';
+            this.yourSum += this.theValue(card);
+            this.yourAceCount += this.checkAce(card);
+            document.getElementById("your-cards").append(cardImg);
+        }
+
+        const nextRound2 = document.getElementById('next-round');
+       // nextRound2.style.display = 'none';
+       console.log(this.startNext);
+        }
+
     theValue(card) {
         let data = card.split('_');
         let value = data[0];
