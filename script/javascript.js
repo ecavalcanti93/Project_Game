@@ -7,7 +7,7 @@ class CardGame {
         this.hidden = null;
         this.deck = [];
         this.canHit = true;
-        this.lives = 5;
+
     }
     
     buildDeck() {
@@ -92,20 +92,21 @@ class CardGame {
         document.getElementById('hidden').src = "./images/" + this.hidden + '.png';
 
         let message = "";
-        if (this.yourSum > 21 || this.yourSum < this.dealerSum) {
+        if (this.yourSum > 21) {
             message = "You Lose!";
-            this.lives -= 1;
-        } else if (this.dealerSum > 21 || this.yourSum > this.dealerSum) {
+        } else if (this.dealerSum > 21) {
             message = "You Win!";
-            this.lives += 1;
         } else if (this.yourSum === this.dealerSum) {
             message = "Tie!";
+        } else if (this.yourSum > this.dealerSum) {
+            message = "You Win!";
+        } else if (this.yourSum < this.dealerSum) {
+            message = "You Lose!";
         }
         
         document.getElementById("dealer-sum").innerText = this.dealerSum;
         document.getElementById("your-sum").innerText = this.yourSum;
         document.getElementById("results").innerText = message;
-        document.getElementById("score-button").innerText = this.lives;
 
         const nextRound = document.getElementById('next-round');
         nextRound.style.display = 'block';
