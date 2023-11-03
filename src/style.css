@@ -41,7 +41,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0;
+      margin-right: 25px;
       border: none; 
       border-radius: 50px; 
       cursor: pointer; 
