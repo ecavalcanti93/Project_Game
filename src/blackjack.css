@@ -6,7 +6,10 @@
     box-sizing: border-box;
 }
 
-
+#home {
+    width: 100%;
+    object-fit: cover;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;

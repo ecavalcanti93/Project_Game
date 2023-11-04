@@ -57,7 +57,7 @@ class CardGame {
             this.yourAceCount += this.checkAce(card);
             document.getElementById("your-cards").append(cardImg);
         }
-        document.getElementById("score-button").innerText = this.lives;
+        //document.getElementById("score-button").innerText = this.lives;
         document.getElementById('hit').addEventListener("click", this.hit.bind(this));
         document.getElementById('pass').addEventListener("click", this.pass.bind(this));
         document.getElementById('next-round').addEventListener('click', () => {
