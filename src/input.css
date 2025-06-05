@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.containner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.logo {
+    position: absolute;
+    justify-content: center;
+    padding-left: 800px;
+    background-image: url(images/background_home.jpg);
+}
+
+  #button-play {
+    width: 260px; 
+    height: 60px; 
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: none; 
+    border-radius: 50px; 
+    cursor: pointer; 
+    color: black; 
+    font-size: 26px; 
+    text-align: right;
+    text-decoration: none;
+    }
+    #button-rules {
+      width: 260px; 
+      height: 60px; 
+      background-color: gold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 35px;
+      border: none; 
+      border-radius: 50px; 
+      cursor: pointer; 
+      color: black; 
+      font-size: 26px; 
+      text-align: right;
+      text-decoration: none;
+    }
+
+    
+  #game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../images/background_game.jpg);
+    background-size: cover;
+  }
+    #test {
+      display: flex;
+      gap: 1rem;
+    }
+    
+
+@import "tailwindcss";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#home {
+    width: 100%;
+    object-fit: cover;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+ 
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#table {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    background-image: url(images/background_game.jpg);
+}
+
+#chip {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    background-image: url(images/background_game.jpg);
+    bottom: 70px;
+    gap: 1rem;
+}
+
+h2{
+    color: white;
+}
+p{
+    color: white;
+}
+
+#game {   
+    position:absolute;
+    justify-content: center;
+    background-image: url(images/table.png);
+}
+
+#dealer-cards img{
+    height: 145px;
+    width: 104px;
+    margin: 3px;
+}
+
+#your-cards img{
+    height: 145px;
+    width: 104px;
+    margin: 3px;
+}
+
+#hit{
+    width: 75px;
+    height: 35px;
+    font-size: 18px;
+}
+
+#pass{
+    width: 75px;
+    height: 35px;
+    font-size: 18px;
+}
+
+#next-round{
+    display: none;
+    width: 120px;
+    height: 35px;
+    font-size: 18px;
+}
+
+#button-red{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#results {
+    padding-top: 10px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+}
+#button-back {
+    display: flex;
+   align-items: center;
+    position: absolute;
+   /* justify-content: center;*/
+    /*background-image: url(images/table.png);*/
+    color: antiquewhite;
+   /* margin-left: 1200px;*/
+    top: 70px;
+    right: 70px;
+    width: 100px; 
+    height: 40px; 
+    background-color: gold;
+    justify-content: center;
+    
+    border-radius: 50px; 
+    cursor: pointer; 
+    color: black; 
+    font-size: 18px; 
+    text-decoration: none;
+   
+}
+
+#score{
+    display: flex;
+    align-items: center;
+     position: absolute;
+    /* justify-content: center;*/
+     /*background-image: url(images/table.png);*/
+     color: antiquewhite;
+    /* margin-left: 1200px;*/
+     top: 110px;
+     right: 70px;
+     width: 100px; 
+     height: 40px; 
+
+}
+
+   

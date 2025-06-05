@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.8"
+  },
+  "name": "blackjack_game",
+  "description": "This game is the fruit of our studies at the \"Ironhack\" school after a month. We are trying to create a fun game at the same time to see our possibilities in programming",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}

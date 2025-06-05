@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack</title>
     <link rel="shortcut icon" href="images/chip.png">
-    <link rel="stylesheet" type="text/css" href="src/style.css">
+    <link href="./src/output.css" rel="stylesheet">
+    <title>Blackjack</title>
 </head>
-<body>
-    <main class="containner">
-    <img src="images/background_home.jpg" alt="background_home" class="home">
-    <div class="logo">
-    <img src="images/logo.png" alt="logo" width="auto" height="200">
-    <div id="test"><a href="gamescreen.html" id="button-play">Play</a>
-    <a href="https://bicyclecards.com/how-to-play/blackjack" id="button-rules">How to Play?</a></div>
-</div>
-</main>
+<body class="relative bg-cover bg-center bg-no-repeat min-h-screen" style="background-image: url('images/background_home.jpg');">
+      <div class="absolute top-1/2 right-10 -translate-y-1/2 flex flex-col items-center gap-5 w-full max-w-xl border-4 p-4 rounded-xl lg:max-w-2xl">
+        <img src="images/logo.png" alt="logo">
+        <div class="flex flex-row gap-3 w-full">
+            <a href="gamescreen.html" class="flex justify-center items-center rounded-2xl bg-yellow-300 cursor-pointer w-full h-12">Play</a>
+            <a href="https://bicyclecards.com/how-to-play/blackjack" class="flex justify-center items-center rounded-2xl bg-yellow-300 cursor-pointer w-full h-12">How to Play?</a>
+        </div>
+    </div>
     <script src="script/playgame.js"></script>  
     <script src="script/javascript.js"></script>
 </body>
